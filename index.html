@@ -86,7 +86,6 @@
 
         .result-table {
             margin-top: 10px;
-            overflow-y: scroll;
         }
 
         .result-line.good {
@@ -150,6 +149,10 @@
         .coef-table tr td {
             border: 1px solid black;
             padding: 5px;
+        }
+
+        .coef-table-scroll {
+            overflow-x: auto;
         }
         
 
@@ -346,6 +349,9 @@
                     </p>
                 </div>
                 <h2>Таблиця вагових коефіцієнтів спеціальностей ХНТУ</h2>
+                <div class="coef-table-scroll" js-coef-table>
+
+                </div>
             </div>
         </main>
         <footer>

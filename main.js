@@ -295,7 +295,7 @@ function fillCoefTable() {
         $coefTable.append($line);
     });
 
-    $table.append($coefTable);
+    document.querySelector('[js-coef-table]').append($coefTable);
 }
 
 fillCoefTable();
