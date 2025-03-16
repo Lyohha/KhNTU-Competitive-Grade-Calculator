@@ -1,4 +1,4 @@
-name: "Build"
+name: "Build and deploy"
 
 on:
   pull_request:
@@ -8,14 +8,38 @@ on:
     branches:
       - main
 
-jobs:  
-  build:      
-    name: Build & Package
+jobs:
+  artifact:
+    name: Artifact
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout and login
         uses: actions/checkout@v3
+      
+      - name: Create artifact
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: .
+          dest: artifact.zip
+      
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "artifact.zip"
+          tag: v${{ env.VERSION }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+
+  docker:
+    needs: artifact
+    name: Push to registry
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout and login
+        uses: actions/checkout@v3
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
