@@ -130,7 +130,10 @@ document.querySelector('[js-calculator_form]').addEventListener('submit', functi
             })
         }
 
-        if(result >= 130)
+        if(result >= 130 && value.name != 'D4 Публічне управління та адміністрування'  && value.name != 'C3 Міжнародні відносини')
+            tableItem.good = true;
+
+        if(result >= 150)
             tableItem.good = true;
 
         tableItem.result = result;
