@@ -209,43 +209,43 @@ function fillCoefTable() {
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Українська мова';
+    $td.innerHTML = 'Українська мова (К1)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Математика';
+    $td.innerHTML = 'Математика (К2)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Історія України';
+    $td.innerHTML = 'Історія України (К3)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Географія';
+    $td.innerHTML = 'Географія (К4)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Іноземна мова';
+    $td.innerHTML = 'Іноземна мова (К4)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Хімія';
+    $td.innerHTML = 'Хімія (К4)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Фізика';
+    $td.innerHTML = 'Фізика (К4)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Біологія';
+    $td.innerHTML = 'Біологія (К4)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Українська література';
+    $td.innerHTML = 'Українська література (К4)';
     $trHead.append($td);
 
     $td = document.createElement('td');
-    $td.innerHTML = 'Творчий конкурс';
+    $td.innerHTML = 'Творчий конкурс (КТ)';
     $trHead.append($td);
 
     $coefTable.append($tHead);
