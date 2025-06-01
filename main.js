@@ -75,6 +75,13 @@ document.querySelector('[js-calculator_form]').addEventListener('submit', functi
     window.calculatorConfig.forEach(function(value, index) {
         if(!conCheckbox && value.con != null) 
             return;
+        
+        let maxK4 = value.geo;
+
+        Object.keys(SUBJECTS).forEach(function(key, jndex) {
+            if(value[key] > maxK4)
+                maxK4 = value[key];
+        });
 
         let tableItem = {
             name: value.name,
@@ -105,7 +112,7 @@ document.querySelector('[js-calculator_form]').addEventListener('submit', functi
         let bottomValue = value.ukr + value.math + value.history;
 
         topPart += subject4Value * value[subject4RadioBox];
-        bottomValue += value[subject4RadioBox];
+        bottomValue += (value[subject4RadioBox] + maxK4) / 2;
 
         tableItem.topPart = topPart;
         tableItem.bottomValue = bottomValue;
