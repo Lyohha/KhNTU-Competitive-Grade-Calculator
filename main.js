@@ -158,7 +158,7 @@ document.querySelector('[js-calculator_form]').addEventListener('submit', functi
 
     console.log(calculatedSubjects);
 
-    $table.innerHTML = '<div class="result-line"><div class="result-spec head">Спеціальність</div><div class="result-grade head">Конкурсний бал</div><div class="result-subjects head"> Предметні складники</div></div>';
+    $table.innerHTML = '<h3>*Синій фон рядка вказує на можливість участі у конкурсі на бюжетне місце</h3><div class="result-line"><div class="result-spec head">Спеціальність</div><div class="result-grade head">Конкурсний бал</div><div class="result-subjects head"> Предметні складники</div></div>';
 
     calculatedSubjects.forEach(function(value, index) {
         let $line = document.createElement('div');
@@ -175,6 +175,9 @@ document.querySelector('[js-calculator_form]').addEventListener('submit', functi
         let $grade = document.createElement('div');
         $grade.classList.add('result-grade');
         $grade.innerHTML = value.grade;
+
+        $grade.innerHTML = value.grade < 100 ? "0.00" : value.grade;
+
         $line.append($grade);
 
         let $subjects = document.createElement('div');
